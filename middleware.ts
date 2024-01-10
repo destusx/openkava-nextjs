@@ -46,6 +46,10 @@ export default function middleware(req: NextRequest) {
     );
     const isPublicPage = publicPathnameRegex.test(req.nextUrl.pathname);
 
+    const isProjectPage = /^\/([a-z]{2}\/)?projects\/[a-z0-9-]+$/i.test(
+        req.nextUrl.pathname
+    );
+
     const isBlogCategory = /^\/([a-z]{2}\/)?blog\/[a-z]+$/.test(
         req.nextUrl.pathname
     );
@@ -53,7 +57,7 @@ export default function middleware(req: NextRequest) {
         req.nextUrl.pathname
     );
 
-    if (isPublicPage || isBlogCategory || isBlogArticle) {
+    if (isPublicPage || isBlogCategory || isBlogArticle || isProjectPage) {
         return intlMiddleware(req);
     } else {
         return (authMiddleware as any)(req);
