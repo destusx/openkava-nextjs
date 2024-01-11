@@ -12,8 +12,8 @@ const Nav = ({
     localeSwitcher: React.JSX.Element;
 }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const menuRef = useRef<HTMLElement | null>(null);
-    const buttonRef = useRef(null);
+    const menuRef = useRef<HTMLDivElement | null>(null);
+    const buttonRef = useRef<HTMLButtonElement | null>(null);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -30,7 +30,6 @@ const Nav = ({
             !menuRef.current.contains(e.target) &&
             e.target !== buttonRef.current
         ) {
-            console.log(e.currentTarget);
             setIsMenuOpen(false);
         }
     };
