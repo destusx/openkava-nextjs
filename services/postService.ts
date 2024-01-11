@@ -10,11 +10,11 @@ export async function getPosts(slug: string = '') {
     if (slug) {
         res = await fetch(
             `${baseBackendUrl}/posts/category/${slug}?language=${locale}`,
-            { next: { revalidate: 10 } }
+            { next: { tags: ['post'] } }
         );
     } else {
         res = await fetch(`${baseBackendUrl}/posts?language=${locale}`, {
-            next: { revalidate: 10 },
+            next: { tags: ['post'] },
         });
     }
 
@@ -30,7 +30,7 @@ export async function getPosts(slug: string = '') {
 
 export async function getPost(slug: string): Promise<IPost> {
     const res = await fetch(`${baseBackendUrl}/posts/${slug}`, {
-        next: { revalidate: 10 },
+        next: { tags: ['post'] },
     });
 
     if (!res.ok) {

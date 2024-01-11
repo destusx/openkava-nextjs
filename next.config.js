@@ -6,6 +6,10 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'openkava-nestjs-production.up.railway.app',
             },
+            {
+                protocol: 'http',
+                hostname: 'localhost',
+            },
         ],
     },
     env: {

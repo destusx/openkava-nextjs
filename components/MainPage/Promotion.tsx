@@ -13,7 +13,7 @@ const Promotion = () => {
                 <div>
                     <h1 className="text-white">{t('title')}</h1>
                     <p className="mt-5 text-gray-100">{t('subtitle')}</p>
-                    <div className="flex gap-x-10 mt-5 justify-evenly md:justify-normal">
+                    <div className="flex gap-x-12 md:gap-x-10 justify-center mt-5 md:justify-normal">
                         <Link
                             href="/projects"
                             className="bg-second-color border border-second-color px-6 py-3 rounded-custom hover:bg-base-color hover:text-white transition"

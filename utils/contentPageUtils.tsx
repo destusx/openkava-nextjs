@@ -34,7 +34,7 @@ export const renderDateInfo = (type: ContentType, data: ContentTypeData) => {
     }
 
     return (
-        <div className="flex flex-col items-start md:items-center">
+        <div className="flex flex-col md:items-center">
             <div className="mt-3 flex gap-x-1">
                 <CalendarDays />
                 <div>

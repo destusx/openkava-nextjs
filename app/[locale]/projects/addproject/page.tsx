@@ -70,8 +70,6 @@ function AddProject() {
             openedData,
         };
 
-        console.log(project);
-
         createProject(project);
     };
 

@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { useRef, useState } from 'react';
 import { useLocale } from 'next-intl';
 import Tiptap from '@/components/Blog/AddPost/TipTap';
@@ -12,6 +13,7 @@ import { getImagePath } from '@/utils/getPathImage';
 
 function AddPost() {
     const locale: string = useLocale().toUpperCase();
+    const router = useRouter();
     const [content, setContent] = useState<string>('');
     const [title, setTitle] = useState<string>('');
     const [image, setImage] = useState<IImage | null>(null);
@@ -51,6 +53,7 @@ function AddPost() {
         };
 
         createPostMutation(post);
+        router.refresh();
     };
 
     const onAddCategory = (e: React.ChangeEvent<HTMLSelectElement>) => {

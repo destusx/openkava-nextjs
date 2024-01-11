@@ -35,11 +35,11 @@ const ContentPage = async ({ slug, type }: Props) => {
     const parsedConnent = ContentParser(data);
 
     return (
-        <section className="pt-[30px] pb-[50px]">
+        <section className="pt-4 pb-6 md:pt-8 md:pb-12">
             <div className="container">
                 <article className="max-w-2xl m-auto">
                     {breadcrumbs}
-                    <div className="flex flex-col items-center mt-5">
+                    <div className="flex flex-col items-start md:items-center mt-5">
                         <h1 className="text-black text-center">{data.title}</h1>
                         {dateInfo}
                         {image}

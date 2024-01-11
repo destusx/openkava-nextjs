@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from '../../../navigation';
 import { IMenu } from '@/types/menu.types';
 import Hamburger from './Hamburger';
@@ -16,6 +16,18 @@ const Nav = ({
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+
+    const handlePopState = () => {
+        setIsMenuOpen(false);
+    };
+
+    useEffect(() => {
+        window.addEventListener('popstate', handlePopState);
+
+        return () => {
+            window.removeEventListener('popstate', handlePopState);
+        };
+    }, []);
 
     let contactItem = null;
 

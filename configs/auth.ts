@@ -34,7 +34,6 @@ export const authConfig: AuthOptions = {
     ],
     callbacks: {
         async redirect({ baseUrl }) {
-            console.log(baseUrl);
             return baseUrl;
         },
         jwt: async ({ token, user }) => {

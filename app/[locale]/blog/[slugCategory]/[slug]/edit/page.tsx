@@ -34,7 +34,6 @@ function EditPost({ params: { slug } }: EditPostProps) {
             setTitle(post.title);
             setContent(post.content);
             setImage(post.image);
-            console.log(post);
         }
     }, [post]);
 
