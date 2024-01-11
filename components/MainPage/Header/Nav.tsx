@@ -24,12 +24,12 @@ const Nav = ({
     };
 
     const handleCloseMenu = (e: MouseEvent) => {
-        if (
-            menuRef.current &&
-            e.target instanceof Node &&
-            !menuRef.current.contains(e.target) &&
-            e.target !== buttonRef.current
-        ) {
+        const isHamburgerButtonClicked =
+            buttonRef.current && buttonRef.current.contains(e.target as Node);
+        const isOutsideMenu =
+            menuRef.current && !menuRef.current.contains(e.target as Node);
+
+        if (isOutsideMenu && !isHamburgerButtonClicked) {
             setIsMenuOpen(false);
         }
     };
@@ -43,10 +43,10 @@ const Nav = ({
     }, []);
 
     useEffect(() => {
-        window.addEventListener('click', handleCloseMenu);
+        window.addEventListener('mousedown', handleCloseMenu);
 
         return () => {
-            window.removeEventListener('click', handleCloseMenu);
+            window.removeEventListener('mousedown', handleCloseMenu);
         };
     }, []);
 
