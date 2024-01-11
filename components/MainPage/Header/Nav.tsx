@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from '../../../navigation';
 import { IMenu } from '@/types/menu.types';
 import Hamburger from './Hamburger';
@@ -12,6 +12,8 @@ const Nav = ({
     localeSwitcher: React.JSX.Element;
 }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const menuRef = useRef<HTMLElement | null>(null);
+    const buttonRef = useRef(null);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -21,11 +23,31 @@ const Nav = ({
         setIsMenuOpen(false);
     };
 
+    const handleCloseMenu = (e: MouseEvent) => {
+        if (
+            menuRef.current &&
+            e.target instanceof Node &&
+            !menuRef.current.contains(e.target) &&
+            e.target !== buttonRef.current
+        ) {
+            console.log(e.currentTarget);
+            setIsMenuOpen(false);
+        }
+    };
+
     useEffect(() => {
         window.addEventListener('popstate', handlePopState);
 
         return () => {
             window.removeEventListener('popstate', handlePopState);
+        };
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener('click', handleCloseMenu);
+
+        return () => {
+            window.removeEventListener('click', handleCloseMenu);
         };
     }, []);
 
@@ -61,6 +83,7 @@ const Nav = ({
     return (
         <>
             <div
+                ref={menuRef}
                 className={`fixed top-0 ${
                     isMenuOpen ? 'left-0' : '-left-full'
                 } w-10/12 h-screen py-5 px-4 flex-col bg-[#000000d9] justify-center flex items-center gap-y-4 md:gap-y-0 gap-x-3 md:gap-x-5 lg:gap-x-9 transition-all md:static md:left-0 md:flex-row md:bg-transparent md:h-auto z-50`}
@@ -75,7 +98,11 @@ const Nav = ({
                 {contactItem}
                 {localeSwitcher}
             </div>
-            <Hamburger isOpen={isMenuOpen} toggleMenu={toggleMenu} />
+            <Hamburger
+                isOpen={isMenuOpen}
+                toggleMenu={toggleMenu}
+                buttonRef={buttonRef}
+            />
         </>
     );
 };

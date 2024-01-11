@@ -40,7 +40,9 @@ const ContentPage = async ({ slug, type }: Props) => {
                 <article className="max-w-2xl m-auto">
                     {breadcrumbs}
                     <div className="flex flex-col items-start md:items-center mt-5">
-                        <h1 className="text-black text-center">{data.title}</h1>
+                        <h1 className="text-black text-center self-center">
+                            {data.title}
+                        </h1>
                         {dateInfo}
                         {image}
                     </div>
