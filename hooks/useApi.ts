@@ -1,5 +1,5 @@
 import { getBlogCategories } from '@/services/blogCategoryService';
-import { createPost, getPost } from '@/services/postService';
+import { createPost, deletePost, getPost } from '@/services/postService';
 import { ICreatePost } from '@/types/post.types';
 import { useQuery, useMutation } from '@tanstack/react-query';
 import { useSession } from 'next-auth/react';
@@ -13,7 +13,6 @@ export const useCategories = (locale: string) => {
 
 export const useCreatePost = () => {
     const { data: session } = useSession();
-    console.log(session);
     return useMutation({
         mutationFn: (post: ICreatePost) => createPost(post, session?.user.token),
     });
@@ -22,6 +21,12 @@ export const useCreatePost = () => {
 export const useGetSinglePost = (slug: string) => {
     return useQuery({
         queryFn: () => getPost(slug),
-        queryKey: ['posts'],
+    });
+};
+
+export const useDeletePost = (slug: string) => {
+    const { data: session } = useSession();
+    return useMutation({
+        mutationFn: () => deletePost(slug, session?.user.token),
     });
 };

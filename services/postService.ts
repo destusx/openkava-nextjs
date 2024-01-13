@@ -9,13 +9,10 @@ export async function getPosts(slug: string = '') {
 
     if (slug) {
         res = await fetch(
-            `${baseBackendUrl}/posts/category/${slug}?language=${locale}`,
-            { next: { tags: ['post'] } }
+            `${baseBackendUrl}/posts/category/${slug}?language=${locale}`
         );
     } else {
-        res = await fetch(`${baseBackendUrl}/posts?language=${locale}`, {
-            next: { tags: ['post'] },
-        });
+        res = await fetch(`${baseBackendUrl}/posts?language=${locale}`);
     }
 
     if (!res.ok) {
@@ -29,9 +26,7 @@ export async function getPosts(slug: string = '') {
 }
 
 export async function getPost(slug: string): Promise<IPost> {
-    const res = await fetch(`${baseBackendUrl}/posts/${slug}`, {
-        next: { tags: ['post'] },
-    });
+    const res = await fetch(`${baseBackendUrl}/posts/${slug}`);
 
     if (!res.ok) {
         throw new Error('Failed to fetch data');
@@ -45,6 +40,18 @@ export const createPost = async (post: ICreatePost, token: string | undefined) =
     const res = await fetch(`${baseBackendUrl}/posts`, {
         method: 'POST',
         body: JSON.stringify(post),
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+        },
+    });
+
+    return res;
+};
+
+export const deletePost = async (slug: string, token: string | undefined) => {
+    const res = await fetch(`${baseBackendUrl}/posts/${slug}`, {
+        method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,

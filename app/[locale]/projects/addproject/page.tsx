@@ -73,7 +73,7 @@ function AddProject() {
         createProject(project);
     };
 
-    const imageUrl = getImagePath(image?.filename);
+    const imageUrl = getImagePath(image);
 
     return (
         <div className="container max-w-5xl">

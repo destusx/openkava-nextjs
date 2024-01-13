@@ -1,14 +1,8 @@
 import BlogCategories from '@/components/Blog/BlogCategories';
 import PostPreview from '@/components/Blog/PostPreview';
 import PageWrapper from '@/components/PageWrapper';
-import { authConfig } from '@/configs/auth';
-import { getServerSession } from 'next-auth';
 
 const Blog = async () => {
-    const session = await getServerSession(authConfig);
-
-    console.log(session);
-
     return (
         <PageWrapper header="Блог">
             <BlogCategories />
