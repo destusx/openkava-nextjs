@@ -17,8 +17,8 @@ const PricingCard = ({
     buttonText,
 }: IPriceCard) => {
     return (
-        <div className="w-full px-2 lg:px-4 md:w-1/2 lg:w-1/3">
-            <div className="relative z-10 px-4 py-4 mb-10 overflow-hidden bg-white border rounded-custom border-primary border-opacity-20 shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-8">
+        <div className="w-full px-2 lg:px-4 md:w-1/2 xl:w-1/3">
+            <div className="relative md:h-full z-10 px-4 py-4 mb-10 overflow-hidden bg-white border rounded-custom border-primary border-opacity-20 shadow-pricing sm:p-12 lg:pt-10 lg:pb-12 md:px-6">
                 <span className="block mb-4 text-lg font-semibold text-primary">
                     {type}
                 </span>
@@ -29,7 +29,7 @@ const PricingCard = ({
                 <ul className="mb-4">{children}</ul>
                 <Link
                     href={'/'}
-                    className="mt-8 block w-full bg-second-color rounded-custom border border-base-color bg-transparent p-4 text-center text-base font-semibold text-primary transition hover:border-primary hover:bg-primary hover:bg-second-color"
+                    className="mt-8 md:mt-0 md:absolute md:bottom-4 md:w-60 md:left-1/2 md:-translate-x-1/2 block bg-second-color rounded-custom border border-base-color bg-transparent p-4 text-center text-base font-semibold text-primary transition hover:border-primary hover:bg-primary hover:bg-second-color"
                 >
                     {buttonText}
                 </Link>

@@ -10,48 +10,52 @@ const Pricing = () => {
                 the majority have suffered alteration in some form.
             </p>
             <div className="flex flex-wrap justify-center md:-mx-4">
-                <div className="flex flex-wrap md:-mx-4">
-                    <PricingCard
-                        type="Апгрейд"
-                        price="$300"
-                        description="Тариф для повышение дохода уже открытой кофейни"
-                        buttonText="Подробней"
-                    >
-                        <PriceItem>Подготовленный бизнес-план</PriceItem>
-                        <PriceItem>Консультации по выбору локации</PriceItem>
-                        <PriceItem>Оценка потенциала рынка</PriceItem>
-                        <PriceItem>Обзор конкурентов</PriceItem>
-                        <PriceItem>Проверенные поставщики</PriceItem>
-                        <PriceItem>Помощь в формировании меню</PriceItem>
-                        <PriceItem>Обучение персонала</PriceItem>
-                    </PricingCard>
+                <div className="flex flex-wrap md:gap-y-4 md:-mx-4 h-full">
                     <PricingCard
                         type="Базовый"
                         price="$500"
-                        description="Базовый тариф для открытие кофейного бизнеса"
+                        description="Базовая консультация для открытие кофейного бизнеса"
                         buttonText="Подробней"
                     >
                         <PriceItem>Подготовленный бизнес-план</PriceItem>
                         <PriceItem>Консультации по выбору локации</PriceItem>
                         <PriceItem>Оценка потенциала рынка</PriceItem>
-                        <PriceItem>Обзор конкурентов</PriceItem>
                         <PriceItem>Проверенные поставщики</PriceItem>
                         <PriceItem>Помощь в формировании меню</PriceItem>
-                        <PriceItem>Обучение персонала</PriceItem>
+                        <PriceItem>Основы маркетинга и SMM</PriceItem>
+                        <PriceItem>Поддержка 14 дней после консультации</PriceItem>
                     </PricingCard>
                     <PricingCard
                         type="Индивидуальный"
                         price="$800"
-                        description="Индивидуальный тариф для открытие кофейного бизнеса"
+                        description="Индивидуальная консультация для открытие кофейного бизнеса"
                         buttonText="Подробней"
                     >
                         <PriceItem>Подготовленный бизнес-план</PriceItem>
                         <PriceItem>Консультации по выбору локации</PriceItem>
                         <PriceItem>Оценка потенциала рынка</PriceItem>
-                        <PriceItem>Обзор конкурентов</PriceItem>
                         <PriceItem>Проверенные поставщики</PriceItem>
-                        <PriceItem>Помощь в формировании меню</PriceItem>
+                        <PriceItem>Формировании меню</PriceItem>
+                        <PriceItem>Основы маркетинга и SMM</PriceItem>
+                        <PriceItem>Поддержка 30 дней после консультации</PriceItem>
+                        <PriceItem>Начальный курс баристы</PriceItem>
+                        <PriceItem>Выезд на осмотр помещение</PriceItem>
+                        <PriceItem>Обзор конкурентов</PriceItem>
+                    </PricingCard>
+                    <PricingCard
+                        type="Под ключ"
+                        price="от $2000"
+                        description="Профессиональное открытие кофейни под ключ"
+                        buttonText="Подробней"
+                    >
+                        <PriceItem>Полное обучение владельца бизнеса</PriceItem>
+                        <PriceItem>Включает все из тарифа Индивидуальный</PriceItem>
+                        <PriceItem>Проверенные поставщики</PriceItem>
                         <PriceItem>Обучение персонала</PriceItem>
+                        <PriceItem>Поддержка 60 дней после консультации</PriceItem>
+                        <PriceItem>Базовый курс баристы</PriceItem>
+                        <PriceItem>Выезд на осмотр помещение</PriceItem>
+                        <PriceItem>Поиск помещение</PriceItem>
                     </PricingCard>
                 </div>
             </div>

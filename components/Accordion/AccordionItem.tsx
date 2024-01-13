@@ -7,8 +7,9 @@ const AccordionItem = ({ header, text }: { header: string; text: string }) => {
     const handleToggle = () => {
         setActive(!active);
     };
+
     return (
-        <div className="single-faq mb-8 w-full rounded-custom border-2 border-[#F3F4FE] bg-white p-4 sm:p-8 lg:px-6 xl:px-8">
+        <div className="mb-8 w-full rounded-custom border-2 border-[#F3F4FE] bg-white p-4 sm:p-8 lg:px-6 xl:px-8">
             <button
                 className={`faq-btn flex w-full text-left items-center`}
                 onClick={() => handleToggle()}
@@ -36,11 +37,7 @@ const AccordionItem = ({ header, text }: { header: string; text: string }) => {
                 </div>
             </button>
 
-            <div
-                className={`pl-[62px] duration-200 ease-in-out ${
-                    active ? 'block' : 'hidden'
-                }`}
-            >
+            <div className={`pl-[62px] ${active ? 'block' : 'hidden'}`}>
                 <p className="py-3 font-semibold text-base leading-relaxed text-body-color">
                     {text}
                 </p>
