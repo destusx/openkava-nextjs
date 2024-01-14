@@ -35,8 +35,8 @@ export const renderDateInfo = (data: ContentTypeData) => {
         return (
             <div className="mt-3 flex self-center gap-x-7">
                 <div>Опубликовано: {formatPostDate(data)}</div>
-                <div className="flex items-center">
-                    <Eye className="text-xs" />
+                <div style={{ gap: 2 }} className="flex items-center">
+                    <Eye size={20} />
                     {data.viewsCount}
                 </div>
             </div>
