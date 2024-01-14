@@ -10,12 +10,17 @@ import { Language } from '@/types/lang.enum';
 import { handleChangeMainImage } from '@/utils/fileUpload';
 import { IImage } from '@/types/image.types';
 import { getImagePath } from '@/utils/getPathImage';
+import slug from 'slug';
 
 function AddPost() {
     const locale: string = useLocale().toUpperCase();
     const router = useRouter();
     const [content, setContent] = useState<string>('');
     const [title, setTitle] = useState<string>('');
+    const [seoTitle, setSeoTitle] = useState<string>('');
+    const [description, setDescription] = useState<string>('');
+    const [seoDescription, setSeoDescription] = useState<string>('');
+    const [slugStr, setSlugStr] = useState<string>('');
     const [image, setImage] = useState<IImage | null>(null);
     const [ruAlt, setRuAlt] = useState<string | undefined>();
     const [ukAlt, setUkAlt] = useState<string | undefined>();
@@ -46,6 +51,10 @@ function AddPost() {
 
         const post = {
             title,
+            seoTitle,
+            description,
+            seoDescription,
+            slug: slug(slugStr),
             content,
             image: image?.filename,
             categories: categories.map(Number),
@@ -60,7 +69,7 @@ function AddPost() {
         setCategories([e.target.value]);
     };
 
-    const imageUrl = getImagePath(image);
+    const imageUrl = getImagePath(image?.filename);
 
     const onAddImage = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (!ruAlt || !ukAlt) {
@@ -68,6 +77,13 @@ function AddPost() {
         } else {
             handleChangeMainImage(e, setImage, ruAlt, ukAlt);
         }
+    };
+
+    const onTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setTitle(e.target.value);
+
+        const generatedSlug = slug(e.target.value);
+        setSlugStr(generatedSlug);
     };
 
     return (
@@ -146,11 +162,37 @@ function AddPost() {
             </div>
             <input
                 value={title}
-                onChange={e => setTitle(e.target.value)}
+                onChange={onTitleChange}
                 type="text"
                 placeholder="Заголовок статьи"
                 className="w-full py-2 px-2 text-xl border-2 rounded-lg mt-2"
             />
+            <input
+                value={seoTitle}
+                onChange={e => setSeoTitle(e.target.value)}
+                type="text"
+                placeholder="Заголовок статьи для SEO"
+                className="w-full py-2 px-2 text-xl border-2 rounded-lg mt-2"
+            />
+            <input
+                value={slugStr}
+                onChange={e => setSlugStr(e.target.value)}
+                type="text"
+                placeholder="Slug для статьи"
+                className="w-full py-2 px-2 text-xl border-2 rounded-lg mt-2"
+            />
+            <textarea
+                value={description}
+                onChange={e => setDescription(e.target.value)}
+                placeholder="Описание статьи"
+                className="w-full py-2 px-2 text-lg border-2 rounded-lg mt-2 min-h-[135px]"
+            ></textarea>
+            <textarea
+                value={seoDescription}
+                onChange={e => setSeoDescription(e.target.value)}
+                placeholder="Описание статьи для SEO"
+                className="w-full py-2 px-2 text-lg border-2 rounded-lg mt-2 min-h-[135px]"
+            ></textarea>
             <div className="flex justify-between items-center mt-1 mb-1">
                 <div className="flex gap-x-1">
                     <div>Категория:</div>

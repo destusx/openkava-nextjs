@@ -4,6 +4,9 @@ import { Language } from './lang.enum';
 export interface IPost {
     id: number;
     title: string;
+    seoTitle: string;
+    description: string;
+    seoDescription: string;
     content: string;
     language: Language;
     slug: string;
@@ -16,11 +19,18 @@ export interface IPost {
     categories: ICategory[];
 }
 
-export interface ICreatePost
-    extends Omit<
-        Pick<IPost, 'title' | 'content' | 'image' | 'language'>,
-        'categories'
-    > {
+type ICreatePostBase = Pick<
+    IPost,
+    | 'title'
+    | 'seoTitle'
+    | 'description'
+    | 'seoDescription'
+    | 'content'
+    | 'image'
+    | 'language'
+>;
+
+export interface ICreatePost extends Omit<ICreatePostBase, 'categories'> {
     categories: number[];
 }
 

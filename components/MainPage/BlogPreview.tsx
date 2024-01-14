@@ -43,10 +43,7 @@ const BlogPreview = async () => {
                 <Link href={`/blog/${post.categories[0].slug}/${post.slug}`}>
                     <h3 className="mt-3">{post.title}</h3>
                 </Link>
-                <p className="mt-3 text-gray-600">
-                    Поможем открыть кофейню, повысим шансы на успех бизнеса в
-                    несколько раз, поделимся ценным опытом.
-                </p>
+                <p className="mt-3 text-gray-600">{post.description}</p>
             </div>
         );
     });

@@ -13,7 +13,6 @@ import { IProject } from '@/types/project.types';
 import { getServerSession } from 'next-auth';
 import { authConfig } from '@/configs/auth';
 import { LiaEditSolid } from 'react-icons/lia';
-import { AiOutlineDelete } from 'react-icons/ai';
 import DeleteContent from './DeleteContent';
 
 type Props = {
@@ -59,8 +58,8 @@ const ContentPage = async ({ slug, type }: Props) => {
         </div>
     ) : null;
 
-    const breadcrumbs = renderBreadcrumbs(type, data);
-    const dateInfo = renderDateInfo(type, data);
+    const breadcrumbs = renderBreadcrumbs(data);
+    const dateInfo = renderDateInfo(data);
     const image = renderMainImage(data.image);
     const parsedConnent = ContentParser(data);
 

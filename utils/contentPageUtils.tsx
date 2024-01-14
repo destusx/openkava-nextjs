@@ -4,33 +4,43 @@ import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs';
 import formatPostDate from '@/utils/getDate';
 import { IPost } from '@/types/post.types';
 import { IProject } from '@/types/project.types';
+import { Eye } from 'lucide-react';
 
 export type ContentType = 'blog' | 'project';
 export type ContentTypeData = IPost | IProject;
 
-export const renderBreadcrumbs = (type: ContentType, data: ContentTypeData) => {
-    const breadcrumbsData =
-        type === 'project'
-            ? [
-                  { id: 1, name: 'Главная', slug: '/' },
-                  { id: 2, name: 'Проекты', slug: 'projects' },
-              ]
-            : [
-                  { id: 1, name: 'Главная', slug: '/' },
-                  { id: 2, name: 'Блог', slug: 'blog' },
-                  {
-                      id: (data as IPost).categories[0].id,
-                      slug: `blog/${(data as IPost).categories[0].slug}`,
-                      name: (data as IPost).categories[0].name,
-                  },
-              ];
+const isPost = (post: ContentTypeData): post is IPost => 'categories' in post;
+
+export const renderBreadcrumbs = (data: ContentTypeData) => {
+    const breadcrumbsData = isPost(data)
+        ? [
+              { id: 1, name: 'Главная', slug: '/' },
+              { id: 2, name: 'Блог', slug: 'blog' },
+              {
+                  id: data.categories[0].id,
+                  slug: `blog/${data.categories[0].slug}`,
+                  name: data.categories[0].name,
+              },
+          ]
+        : [
+              { id: 1, name: 'Главная', slug: '/' },
+              { id: 2, name: 'Проекты', slug: 'projects' },
+          ];
 
     return <Breadcrumbs breadcrumbs={breadcrumbsData} lastItem={data.title} />;
 };
 
-export const renderDateInfo = (type: ContentType, data: ContentTypeData) => {
-    if (type === 'blog') {
-        return <div className="mt-3">Опубликовано: {formatPostDate(data)}</div>;
+export const renderDateInfo = (data: ContentTypeData) => {
+    if (isPost(data)) {
+        return (
+            <div className="mt-3 flex self-center gap-x-7">
+                <div>Опубликовано: {formatPostDate(data)}</div>
+                <div className="flex items-center">
+                    <Eye className="text-xs" />
+                    {data.viewsCount}
+                </div>
+            </div>
+        );
     }
 
     return (
