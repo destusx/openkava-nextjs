@@ -1,4 +1,5 @@
 import Header from '@/components/MainPage/Header/Header';
+import ReactQueryProvider from '@/utils/Provider';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -8,7 +9,6 @@ import { notFound } from 'next/navigation';
 import { NextAuthProvider } from '@/utils/AuthProvider';
 import { NextIntlClientProvider } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import ReactQueryProvider from '@/utils/Provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
