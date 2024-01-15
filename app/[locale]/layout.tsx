@@ -5,10 +5,10 @@ import { Inter } from 'next/font/google';
 import Footer from '@/components/MainPage/Footer';
 import { useLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
-import ReactQueryProvider from '@/utils/provider';
 import { NextAuthProvider } from '@/utils/AuthProvider';
 import { NextIntlClientProvider } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
+import ReactQueryProvider from '@/utils/Provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
