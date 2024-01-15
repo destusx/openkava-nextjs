@@ -37,7 +37,8 @@ function AddProject() {
     const [ukAlt, setUkAlt] = useState<string | undefined>();
     const [address, setAddress] = useState<string>('');
     const [openedData, setOpenedData] = useState<string>();
-    const [budget, setBudget] = useState<number>(0);
+    const [floorArea, setFloorArea] = useState<number>();
+    const [budget, setBudget] = useState<number>();
 
     const inputFileRef = useRef<HTMLInputElement>(null);
 
@@ -68,12 +69,13 @@ function AddProject() {
             budget,
             address,
             openedData,
+            floorArea,
         };
 
         createProject(project);
     };
 
-    const imageUrl = getImagePath(image);
+    const imageUrl = getImagePath(image?.filename);
 
     return (
         <div className="container max-w-5xl">
@@ -153,21 +155,23 @@ function AddProject() {
                 className="w-full py-2 px-2 text-xl"
             />
             <div>Язык проекта: {locale}</div>
-            <div className="flex gap-x-2 justify-between w-full">
+            <div className="flex gap-2 justify-between w-full">
                 <input
                     type="number"
-                    placeholder="Бюджет"
-                    value={budget}
-                    className="border-2 p-1 rounded-lg w-1/4"
-                    onChange={e => setBudget(+e.target.value)}
+                    placeholder="Площадь"
+                    value={floorArea}
+                    className="border-2 p-1 rounded-lg w-1/3"
+                    onChange={e => setFloorArea(+e.target.value)}
                 />
                 <input
                     type="text"
                     placeholder="Адресс"
                     value={address}
-                    className="border-2 p-1 rounded-lg w-2/4"
+                    className="border-2 p-1 rounded-lg w-2/3"
                     onChange={e => setAddress(e.target.value)}
                 />
+            </div>
+            <div className="flex gap-2 justify-between w-full my-1">
                 <input
                     type="date"
                     placeholder="Дата"
@@ -176,10 +180,17 @@ function AddProject() {
                             ? new Date(openedData).toISOString().split('T')[0]
                             : ''
                     }
-                    className="border-2 p-1 rounded-lg w-1/3"
+                    className="border-2 p-1 rounded-lg w-1/2"
                     onChange={e =>
                         setOpenedData(new Date(e.target.value).toISOString())
                     }
+                />
+                <input
+                    type="number"
+                    placeholder="Бюджет"
+                    value={budget}
+                    className="border-2 p-1 rounded-lg w-1/2"
+                    onChange={e => setBudget(+e.target.value)}
                 />
             </div>
             <Tiptap content={content} setContent={setContent} />

@@ -7,13 +7,13 @@ import {
     renderBreadcrumbs,
     renderDateInfo,
 } from '@/utils/contentPageUtils';
-import renderMainImage from '@/utils/renderMainImage';
 import { IPost } from '@/types/post.types';
 import { IProject } from '@/types/project.types';
 import { getServerSession } from 'next-auth';
 import { authConfig } from '@/configs/auth';
 import { LiaEditSolid } from 'react-icons/lia';
 import DeleteContent from './DeleteContent';
+import RenderMainImage from '@/utils/RenderMainImage';
 
 type Props = {
     slug: string;
@@ -60,7 +60,7 @@ const ContentPage = async ({ slug, type }: Props) => {
 
     const breadcrumbs = renderBreadcrumbs(data);
     const dateInfo = renderDateInfo(data);
-    const image = renderMainImage(data.image);
+    const image = RenderMainImage(data.image.filename);
     const parsedConnent = ContentParser(data);
 
     return (

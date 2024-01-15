@@ -4,7 +4,7 @@ import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs';
 import formatPostDate from '@/utils/getDate';
 import { IPost } from '@/types/post.types';
 import { IProject } from '@/types/project.types';
-import { Eye } from 'lucide-react';
+import { Eye, Store } from 'lucide-react';
 
 export type ContentType = 'blog' | 'project';
 export type ContentTypeData = IPost | IProject;
@@ -45,25 +45,27 @@ export const renderDateInfo = (data: ContentTypeData) => {
 
     return (
         <div className="flex flex-col md:items-center">
-            <div className="mt-3 flex gap-x-1">
-                <CalendarDays />
-                <div>
-                    <strong>Дата открытия: </strong>
-                    {formatPostDate(data)}
+            <div
+                style={{ columnGap: 13 }}
+                className="mt-1 flex flex-col md:flex-row"
+            >
+                <div className="mt-3 flex gap-x-1 items-center">
+                    <CalendarDays size={20} />
+                    <strong>Дата открытия:</strong> {formatPostDate(data)}
+                </div>
+                <div className="mt-3 flex gap-x-1 items-center">
+                    <Store size={20} />
+                    <strong>Площадь:</strong> {data.floorArea} м2
                 </div>
             </div>
-            <div className="flex flex-col md:flex-row gap-x-3">
-                <div className="mt-3 flex gap-x-1">
-                    <CircleDollarSign />
-                    <div>
-                        <strong>Бюджет:</strong> {(data as IProject).budget}$
-                    </div>
+            <div style={{ columnGap: 35 }} className="flex flex-col md:flex-row">
+                <div className="mt-3 flex gap-x-1 items-center">
+                    <CircleDollarSign size={20} />
+                    <strong>Бюджет:</strong> {data.budget}$
                 </div>
-                <div className="mt-3 flex gap-x-1">
-                    <MapPin />
-                    <div>
-                        <strong>Адрес:</strong> {(data as IProject).address}
-                    </div>
+                <div className="mt-3 flex gap-x-1 items-center">
+                    <MapPin size={20} />
+                    <strong>Адрес:</strong> {data.address}
                 </div>
             </div>
         </div>

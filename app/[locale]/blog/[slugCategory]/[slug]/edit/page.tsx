@@ -20,7 +20,7 @@ function EditPost({ params: { slug } }: EditPostProps) {
     const locale: string = useLocale().toUpperCase();
     const [content, setContent] = useState<string>('');
     const [title, setTitle] = useState<string>('');
-    const [image, setImage] = useState<string>('');
+    const [image, setImage] = useState<string | null>(null);
     const [ruAlt, setRuAlt] = useState<string | undefined>();
     const [ukAlt, setUkAlt] = useState<string | undefined>();
     const [categories, setCategories] = useState<string[]>([]);
@@ -33,7 +33,9 @@ function EditPost({ params: { slug } }: EditPostProps) {
         if (post) {
             setTitle(post.title);
             setContent(post.content);
-            setImage(post.image);
+            setImage(post.image.filename);
+            setRuAlt(post.image.ruAlt);
+            setUkAlt(post.image.ukAlt);
         }
     }, [post]);
 

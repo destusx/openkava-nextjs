@@ -1,3 +1,4 @@
+import { IImage } from './image.types';
 import { Language } from './lang.enum';
 
 export interface IProject {
@@ -6,10 +7,11 @@ export interface IProject {
     content: string;
     language: Language;
     slug: string;
-    image: string;
+    image: IImage;
     budget: number;
     address: string;
     openedData: string;
+    floorArea: number;
     createdAt: string;
     updatedAt: string;
     published: boolean;

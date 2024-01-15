@@ -1,4 +1,5 @@
 import { ICategory } from './category.types';
+import { IImage } from './image.types';
 import { Language } from './lang.enum';
 
 export interface IPost {
@@ -10,7 +11,7 @@ export interface IPost {
     content: string;
     language: Language;
     slug: string;
-    image: string;
+    image: IImage;
     createdAt: string;
     updatedAt: string;
     published: boolean;
@@ -21,16 +22,11 @@ export interface IPost {
 
 type ICreatePostBase = Pick<
     IPost,
-    | 'title'
-    | 'seoTitle'
-    | 'description'
-    | 'seoDescription'
-    | 'content'
-    | 'image'
-    | 'language'
+    'title' | 'seoTitle' | 'description' | 'seoDescription' | 'content' | 'language'
 >;
 
-export interface ICreatePost extends Omit<ICreatePostBase, 'categories'> {
+export interface ICreatePost extends ICreatePostBase {
+    image: string;
     categories: number[];
 }
 

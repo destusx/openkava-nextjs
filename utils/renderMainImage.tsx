@@ -1,20 +1,9 @@
 import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import { getImagePath } from './getPathImage';
-import { baseBackendUrl } from './constans';
+import { getImage } from '@/services/imageService';
 
-async function getImage(imgName: string) {
-    const res = await fetch(`${baseBackendUrl}/image/${imgName}`);
-
-    if (!res.ok) {
-        // This will activate the closest `error.js` Error Boundary
-        throw new Error('Failed to fetch data');
-    }
-
-    return res.json();
-}
-
-export default async function renderMainImage(imgName: string) {
+export default async function RenderMainImage(imgName: string) {
     const image = await getImage(imgName);
     const locale: string = useLocale().toUpperCase();
 

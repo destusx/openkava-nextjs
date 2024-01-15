@@ -19,7 +19,7 @@ const PostPreview = async ({ slug }: { slug?: string }) => {
             { locale: locale === 'ru' ? ru : uk }
         );
 
-        const imageUrl = getImagePath(post.image);
+        const imageUrl = getImagePath(post.image.filename);
 
         return (
             <div key={post.id}>
