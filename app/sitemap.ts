@@ -1,4 +1,5 @@
 import { locales } from '@/config';
+import { ICategory } from '@/types/category.types';
 import { DOMAIN } from '@/utils/constans';
 
 export default async function sitemap() {
@@ -10,19 +11,21 @@ export default async function sitemap() {
         `http://localhost:4444/categories?language=${ruLocale.toLocaleUpperCase()}`
     );
 
-    const ukCategories = await ukRategoriesData.json();
-    const ruCategories = await ruCategoriesData.json();
+    const ukCategories: ICategory[] = await ukRategoriesData.json();
+    const ruCategories: ICategory[] = await ruCategoriesData.json();
 
     const ukCategoriesUrl = ukCategories
-        ?.map(post =>
-            post.slug !== 'all-posts' ? { url: `${DOMAIN}/blog/${post.slug}` } : null
+        ?.map(category =>
+            category.slug !== 'all-posts'
+                ? { url: `${DOMAIN}/blog/${category.slug}` }
+                : null
         )
         .filter(Boolean);
 
     const ruCategoriesUrl = ruCategories
-        ?.map(post =>
-            post.slug !== 'all-posts'
-                ? { url: `${DOMAIN}/blog/${ruLocale}/${post.slug}` }
+        ?.map(category =>
+            category.slug !== 'all-posts'
+                ? { url: `${DOMAIN}/blog/${ruLocale}/${category.slug}` }
                 : null
         )
         .filter(Boolean);
