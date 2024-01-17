@@ -7,7 +7,6 @@ const ProjectPreview = async () => {
     const projects = await getProjects();
 
     return projects.map((project, i) => {
-        console.log(project);
         const imageUrl = getImagePath(project.image.filename);
 
         return (

@@ -21,8 +21,6 @@ const BlogPreview = async () => {
             { locale: locale === 'ru' ? ru : uk }
         );
 
-        console.log(post);
-
         const imageUrl = getImagePath(post.image.filename);
 
         return (

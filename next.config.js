@@ -14,6 +14,7 @@ const nextConfig = {
     },
     env: {
         BASE_URL: process.env.BASE_URL,
+        DOMAIN: process.env.DOMAIN,
     },
 };
 

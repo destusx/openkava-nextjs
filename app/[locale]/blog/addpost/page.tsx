@@ -61,8 +61,6 @@ function AddPost() {
             language: locale as Language,
         };
 
-        console.log(post);
-
         createPostMutation(post);
         router.refresh();
     };
