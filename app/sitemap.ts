@@ -1,14 +1,14 @@
 import { locales } from '@/config';
 import { ICategory } from '@/types/category.types';
-import { DOMAIN } from '@/utils/constans';
+import { DOMAIN, baseBackendUrl } from '@/utils/constans';
 
 export default async function sitemap() {
     const [ukLocale, ruLocale] = locales;
     const ukRategoriesData = await fetch(
-        `http://localhost:4444/categories?language=${ukLocale.toLocaleUpperCase()}`
+        `${baseBackendUrl}/categories?language=${ukLocale.toLocaleUpperCase()}`
     );
     const ruCategoriesData = await fetch(
-        `http://localhost:4444/categories?language=${ruLocale.toLocaleUpperCase()}`
+        `${baseBackendUrl}/categories?language=${ruLocale.toLocaleUpperCase()}`
     );
 
     const ukCategories: ICategory[] = await ukRategoriesData.json();
