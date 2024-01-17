@@ -7,6 +7,8 @@ interface IHamburger {
 const Hamburger = ({ isOpen, toggleMenu, buttonRef }: IHamburger) => {
     return (
         <button
+            role="button"
+            aria-label="Иконка меню"
             ref={buttonRef}
             onClick={toggleMenu}
             className="absolute top-1/2 -translate-y-1/2 right-4 sm:right-7 w-8 h-8 flex justify-center items-start flex-col md:hidden z-50"

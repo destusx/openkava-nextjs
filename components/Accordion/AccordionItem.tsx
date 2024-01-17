@@ -33,7 +33,7 @@ const AccordionItem = ({ header, text }: { header: string; text: string }) => {
                 </div>
 
                 <div className="w-full">
-                    <h4 className="text-lg font-semibold text-black">{header}</h4>
+                    <h3 className="text-lg font-semibold text-black">{header}</h3>
                 </div>
             </button>
 
