@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import parse, { HTMLReactParserOptions } from 'html-react-parser';
+import parse, { HTMLReactParserOptions, domToReact } from 'html-react-parser';
 import { DOMNode } from 'html-react-parser/lib/dom-to-react';
 import { IPost } from '@/types/post.types';
 import { IProject } from '@/types/project.types';
@@ -12,7 +12,7 @@ function ContentParser(content: IPost | IProject) {
                 const { src, alt, height, width } = domNode.attribs;
 
                 return (
-                    <div className="flex flex-col">
+                    <div className="flex flex-col mb-3">
                         <Image
                             alt={alt}
                             src={src}
@@ -36,8 +36,11 @@ function ContentParser(content: IPost | IProject) {
             }
 
             if (domNode.name === 'ol') {
-                domNode.attribs.className = `pl-6`;
-                return domNode.attribs;
+                return (
+                    <ol style={{ paddingLeft: 20 }}>
+                        {domToReact(domNode.children, options)}
+                    </ol>
+                );
             }
 
             if (domNode.name === 'p') {
@@ -71,7 +74,7 @@ function ContentParser(content: IPost | IProject) {
                                     color: '#818cf8',
                                     fontSize: '1rem',
                                     position: 'absolute',
-                                    top: '4.5px',
+                                    top: '6px',
                                     left: '0',
                                 }}
                             >
