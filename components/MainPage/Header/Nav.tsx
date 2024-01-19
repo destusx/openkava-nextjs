@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from '../../../navigation';
 import { IMenu } from '@/types/menu.types';
 import Hamburger from './Hamburger';
+import { ChevronDown } from 'lucide-react';
+import Dropdown from './Dropdown';
 
 const Nav = ({
     navLinks,
@@ -12,11 +14,17 @@ const Nav = ({
     localeSwitcher: React.JSX.Element;
 }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement | null>(null);
+    const subMenuRef = useRef<HTMLUListElement | null>(null);
     const buttonRef = useRef<HTMLButtonElement | null>(null);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+    };
+
+    const toggleSubMenu = () => {
+        setIsSubMenuOpen(!isSubMenuOpen);
     };
 
     const handlePopState = () => {
@@ -33,6 +41,20 @@ const Nav = ({
             setIsMenuOpen(false);
         }
     };
+
+    const handleCloseSubmenu = (e: MouseEvent) => {
+        if (subMenuRef.current && !subMenuRef.current.contains(e.target as Node)) {
+            setIsSubMenuOpen(false);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('mousedown', handleCloseSubmenu);
+
+        return () => {
+            window.removeEventListener('mousedown', handleCloseSubmenu);
+        };
+    }, []);
 
     useEffect(() => {
         window.addEventListener('popstate', handlePopState);
@@ -52,7 +74,26 @@ const Nav = ({
 
     let contactItem = null;
 
-    const items = navLinks.map(({ id, name, slug }) => {
+    const items = navLinks.map(({ id, name, slug, subcategories }) => {
+        if (subcategories?.length > 0) {
+            return (
+                <div className="relative w-full md:w-auto">
+                    <button
+                        onClick={toggleSubMenu}
+                        className="relative block w-full text-lg md:text-sm lg:text-base md:w-auto text-center text-gray-100 hover:text-white transition px-6 py-2 md:px-0 md:py-0"
+                    >
+                        {name}
+                        <ChevronDown
+                            className="absolute right-28 top-4 md:-right-4 md:top-1.5"
+                            size={16}
+                        />
+                    </button>
+                    {isSubMenuOpen ? (
+                        <Dropdown dropRef={subMenuRef} subitems={subcategories} />
+                    ) : null}
+                </div>
+            );
+        }
         if (slug === 'contacts') {
             contactItem = (
                 <Link
