@@ -4,6 +4,7 @@ import { Link } from '../../../navigation';
 import { IMenu } from '@/types/menu.types';
 import Hamburger from './Hamburger';
 import { ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Dropdown from './Dropdown';
 
 const Nav = ({
@@ -16,15 +17,16 @@ const Nav = ({
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement | null>(null);
-    const subMenuRef = useRef<HTMLUListElement | null>(null);
+    const subMenuRef = useRef<HTMLDivElement | null>(null);
+    const dropdownRef = useRef<HTMLUListElement | null>(null);
     const buttonRef = useRef<HTMLButtonElement | null>(null);
 
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
+        setIsMenuOpen(prevIsMenuOpen => !prevIsMenuOpen);
     };
 
     const toggleSubMenu = () => {
-        setIsSubMenuOpen(!isSubMenuOpen);
+        setIsSubMenuOpen(prevIsSubMenuOpen => !prevIsSubMenuOpen);
     };
 
     const handlePopState = () => {
@@ -43,7 +45,12 @@ const Nav = ({
     };
 
     const handleCloseSubmenu = (e: MouseEvent) => {
-        if (subMenuRef.current && !subMenuRef.current.contains(e.target as Node)) {
+        const isSubMenuLinkClicked =
+            subMenuRef.current && subMenuRef.current.contains(e.target as Node);
+        const isOutsideSubMenu =
+            dropdownRef.current && !dropdownRef.current.contains(e.target as Node);
+
+        if (isOutsideSubMenu && !isSubMenuLinkClicked) {
             setIsSubMenuOpen(false);
         }
     };
@@ -77,20 +84,36 @@ const Nav = ({
     const items = navLinks.map(({ id, name, slug, subcategories }) => {
         if (subcategories?.length > 0) {
             return (
-                <div className="relative w-full md:w-auto">
+                <div key={id} ref={subMenuRef} className="relative w-full md:w-auto">
                     <button
                         onClick={toggleSubMenu}
                         className="relative block w-full text-lg md:text-sm lg:text-base md:w-auto text-center text-gray-100 hover:text-white transition px-6 py-2 md:px-0 md:py-0"
                     >
                         {name}
                         <ChevronDown
-                            className="absolute right-28 top-4 md:-right-4 md:top-1.5"
+                            className="absolute right-[34%] top-4 md:-right-4 md:top-1.5"
                             size={16}
                         />
                     </button>
-                    {isSubMenuOpen ? (
-                        <Dropdown dropRef={subMenuRef} subitems={subcategories} />
-                    ) : null}
+                    <AnimatePresence>
+                        {isSubMenuOpen && (
+                            <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: 'auto', opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                            >
+                                <Dropdown
+                                    dropRef={dropdownRef}
+                                    subitems={subcategories}
+                                    isSubMenuOpen={isSubMenuOpen}
+                                    onClick={() => {
+                                        toggleMenu();
+                                        toggleSubMenu();
+                                    }}
+                                />
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </div>
             );
         }
