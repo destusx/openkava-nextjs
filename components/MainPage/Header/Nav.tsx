@@ -91,7 +91,7 @@ const Nav = ({
                     >
                         {name}
                         <ChevronDown
-                            className="absolute right-[34%] top-4 md:-right-4 md:top-1.5"
+                            className="absolute right-[calc(50%-50px)] top-4 md:-right-4 md:top-1.5"
                             size={16}
                         />
                     </button>
@@ -105,7 +105,6 @@ const Nav = ({
                                 <Dropdown
                                     dropRef={dropdownRef}
                                     subitems={subcategories}
-                                    isSubMenuOpen={isSubMenuOpen}
                                     onClick={() => {
                                         toggleMenu();
                                         toggleSubMenu();

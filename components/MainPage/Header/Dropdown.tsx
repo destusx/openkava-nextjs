@@ -2,16 +2,14 @@
 import { Link } from '@/navigation';
 import { IMenuSubcategory } from '@/types/menu.types';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useEffect, useState } from 'react';
 
 interface IDropdown {
     subitems: IMenuSubcategory[];
     dropRef: React.Ref<HTMLUListElement>;
-    isSubMenuOpen: boolean;
     onClick: () => void;
 }
 
-const Dropdown = ({ subitems, dropRef, onClick, isSubMenuOpen }: IDropdown) => {
+const Dropdown = ({ subitems, dropRef, onClick }: IDropdown) => {
     return (
         <AnimatePresence>
             <motion.ul
