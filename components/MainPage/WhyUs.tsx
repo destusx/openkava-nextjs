@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import coffeeShopImg from '../../assets/images/main-page/why-us/coffee-shop.png';
-import supportImg from '../../assets/images/main-page/why-us/support.png';
+import supportImg from '../../assets/images/main-page/why-us/support-client.png';
 import reputationImg from '../../assets/images/main-page/why-us/low-risk.png';
 
 const WhyUs = () => {
@@ -15,7 +15,7 @@ const WhyUs = () => {
                     </h2>
                     <div className="flex flex-col md:flex-row justify-center md:justify-between mt-10 gap-x-12 gap-y-4">
                         <div className="flex-1 flex flex-col items-center">
-                            <div className="w-[80%] md:w-full flex flex-col mt-5 lg:mt-0">
+                            <div className="w-[80%] md:w-full flex flex-col mt-5 lg:mt-0 transition-all duration-300 ease-linear hover:scale-[102%]">
                                 <Image
                                     src={coffeeShopImg}
                                     alt="coffee business plan illustration"
@@ -32,7 +32,7 @@ const WhyUs = () => {
                             </div>
                         </div>
                         <div className="flex-1 flex flex-col items-center">
-                            <div className="w-[80%] md:w-full flex flex-col mt-5 lg:mt-0">
+                            <div className="w-[80%] md:w-full flex flex-col mt-5 lg:mt-0 transition-all duration-300 ease-linear hover:scale-[102%]">
                                 <Image
                                     src={reputationImg}
                                     alt="coffee business plan illustration"
@@ -49,7 +49,7 @@ const WhyUs = () => {
                             </div>
                         </div>
                         <div className="flex-1 flex flex-col items-center">
-                            <div className="w-[80%] md:w-full flex flex-col mt-5 lg:mt-0">
+                            <div className="w-[80%] md:w-full flex flex-col mt-5 lg:mt-0 transition-all duration-300 ease-linear hover:scale-[102%]">
                                 <Image
                                     src={supportImg}
                                     alt="coffee business plan illustration"

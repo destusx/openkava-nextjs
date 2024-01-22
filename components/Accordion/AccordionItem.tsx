@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const AccordionItem = ({ header, text }: { header: string; text: string }) => {
     const [active, setActive] = useState(false);
@@ -38,9 +39,19 @@ const AccordionItem = ({ header, text }: { header: string; text: string }) => {
             </button>
 
             <div className={`pl-[62px] ${active ? 'block' : 'hidden'}`}>
-                <p className="py-3 font-semibold text-base leading-relaxed text-body-color">
-                    {text}
-                </p>
+                <AnimatePresence>
+                    {active && (
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="py-3 font-semibold text-base leading-relaxed text-body-color"
+                        >
+                            {text}
+                        </motion.p>
+                    )}
+                </AnimatePresence>
             </div>
         </div>
     );

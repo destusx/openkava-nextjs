@@ -12,7 +12,7 @@ const Team = () => {
                         {t('title')}
                     </h2>
                     <div className="flex flex-col md:flex-row items-center justify-center md:justify-evenly xl:justify-between flex-wrap mt-10 gap-x-10 gap-y-6">
-                        <div className="w-[296px] h-[344px] pt-12 pb-8 bg-white flex flex-col items-center rounded-custom">
+                        <div className="w-[296px] h-[344px] pt-12 pb-8 bg-white flex flex-col items-center rounded-custom transition duration-300 shadow-md hover:shadow-lg">
                             <div className="w-[168px] h-[168px] rounded-full flex flex-col mt-5 lg:mt-0">
                                 <Image
                                     src={authorImg}
@@ -27,7 +27,7 @@ const Team = () => {
                                 Менеджер проекта
                             </div>
                         </div>
-                        <div className="w-[296px] h-[344px] pt-12 pb-8 bg-white flex flex-col items-center rounded-custom">
+                        <div className="w-[296px] h-[344px] pt-12 pb-8 bg-white flex flex-col items-center rounded-custom transition duration-300 shadow-md hover:shadow-lg">
                             <div className="w-[168px] h-[168px] rounded-full flex flex-col mt-5 lg:mt-0">
                                 <Image
                                     src={authorImg}
@@ -42,7 +42,7 @@ const Team = () => {
                                 Менеджер проекта
                             </div>
                         </div>
-                        <div className="w-[296px] h-[344px] pt-12 pb-8 bg-white flex flex-col items-center rounded-custom">
+                        <div className="w-[296px] h-[344px] pt-12 pb-8 bg-white flex flex-col items-center rounded-custom transition duration-300 shadow-md hover:shadow-lg">
                             <div className="w-[168px] h-[168px] rounded-full flex flex-col mt-5 lg:mt-0">
                                 <Image
                                     src={authorImg}
