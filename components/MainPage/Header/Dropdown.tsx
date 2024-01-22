@@ -24,10 +24,10 @@ const Dropdown = ({ subitems, dropRef, onClick }: IDropdown) => {
                         <li
                             key={item.id}
                             onClick={onClick}
-                            className="hover:bg-slate-300 p-2 overflow-hidden"
+                            className="hover:bg-slate-300 overflow-hidden w-full"
                         >
                             <Link
-                                className="block w-full text-lg md:text-sm lg:text-base md:w-auto transition px-6 py-2 md:px-0 md:py-0"
+                                className="block w-full text-lg md:text-sm lg:text-base md:w-auto transition px-6 py-2 md:px-2 md:py-2"
                                 href={item.slug}
                             >
                                 {item.name}
