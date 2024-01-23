@@ -35,25 +35,8 @@ function ContentParser(content: IPost | IProject) {
                 return domNode.attribs;
             }
 
-            if (domNode.name === 'ol') {
-                return (
-                    <ol style={{ paddingLeft: 20 }}>
-                        {domToReact(domNode.children, options)}
-                    </ol>
-                );
-            }
-
             if (domNode.name === 'p') {
                 domNode.attribs.className = 'leading-8';
-                return domNode.attribs;
-            }
-
-            if (
-                domNode.name === 'li' &&
-                domNode.parent &&
-                domNode.parent.name === 'ol'
-            ) {
-                domNode.attribs.className = `pl-1`;
                 return domNode.attribs;
             }
 

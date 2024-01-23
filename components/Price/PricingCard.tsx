@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ElementType, ReactNode } from 'react';
 import { Link } from '@/navigation';
 
 interface IPriceCard {
@@ -7,6 +7,7 @@ interface IPriceCard {
     price: string;
     type: string;
     buttonText: string;
+    headingLevel?: ElementType;
 }
 
 const PricingCard = ({
@@ -15,14 +16,15 @@ const PricingCard = ({
     price,
     type,
     buttonText,
+    headingLevel: Heading = 'h2',
 }: IPriceCard) => {
     return (
-        <div className="w-full px-2 lg:px-4 md:w-1/2 xl:w-1/3">
+        <div className="w-full lg:w-[400px] xl:flex-1">
             <div className="relative md:h-full z-10 px-4 py-4 mb-10 overflow-hidden bg-white border rounded-custom border-primary border-opacity-20 shadow-pricing sm:p-12 lg:pt-10 lg:pb-12 md:px-6">
-                <span className="block mb-4 text-lg font-semibold text-primary">
+                <Heading className="block mb-4 text-lg font-semibold text-primary">
                     {type}
-                </span>
-                <h2 className="mb-5 text-[34px] font-bold text-dark">{price}</h2>
+                </Heading>
+                <div className="mb-5 text-[34px] font-bold text-dark">{price}</div>
                 <p className="mb-4 border-b border-[#F2F2F2] pb-6 text-base text-body-color">
                     {description}
                 </p>

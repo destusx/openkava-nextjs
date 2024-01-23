@@ -10,9 +10,9 @@ const AccordionItem = ({ header, text }: { header: string; text: string }) => {
     };
 
     return (
-        <div className="mb-8 w-full rounded-custom border-2 border-[#F3F4FE] bg-white p-4 sm:p-8 lg:px-6 xl:px-8">
+        <div className="mb-8 w-full rounded-custom border-2 border-[#F3F4FE] bg-white">
             <button
-                className={`faq-btn flex w-full text-left items-center`}
+                className={`faq-btn flex w-full text-left items-center p-4 sm:p-6 lg:px-6`}
                 onClick={() => handleToggle()}
             >
                 <div className="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-primary bg-opacity-5 text-primary">
@@ -38,7 +38,7 @@ const AccordionItem = ({ header, text }: { header: string; text: string }) => {
                 </div>
             </button>
 
-            <div className={`pl-[62px] ${active ? 'block' : 'hidden'}`}>
+            <div className={`pl-6 ${active ? 'block' : 'hidden'}`}>
                 <AnimatePresence>
                     {active && (
                         <motion.p

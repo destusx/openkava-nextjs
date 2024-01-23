@@ -22,7 +22,7 @@
 	}
 
 	ol {
-		@apply list-decimal;
+		@apply list-decimal pl-5;
 	}
 
 }
