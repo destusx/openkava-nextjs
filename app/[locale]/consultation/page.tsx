@@ -73,7 +73,6 @@ const Consultation = () => {
                             alt="coffee shop promotion"
                             sizes="100vw"
                             className="w-full h-auto rounded-custom"
-                            priority
                         />
                     </div>
                     <h2 className="text-center">
@@ -147,7 +146,6 @@ const Consultation = () => {
                                 alt="coffee shop promotion"
                                 sizes="100vw"
                                 className="w-full h-auto rounded-custom"
-                                priority
                             />
                         </div>
                     </div>

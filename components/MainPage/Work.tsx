@@ -23,7 +23,6 @@ const Work = () => {
                                 alt="coffee business plan illustration"
                                 sizes="100vw"
                                 className="w-full h-auto rounded-custom"
-                                priority
                             />
                         </div>
                     </div>

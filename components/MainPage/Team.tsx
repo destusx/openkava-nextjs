@@ -19,7 +19,6 @@ const Team = () => {
                                     alt="coffee business plan illustration"
                                     sizes="100vw"
                                     className="w-full h-auto rounded-custom"
-                                    priority
                                 />
                             </div>
                             <h3 className="mt-4">Богдан</h3>
@@ -34,7 +33,6 @@ const Team = () => {
                                     alt="coffee business plan illustration"
                                     sizes="100vw"
                                     className="w-full h-auto rounded-custom"
-                                    priority
                                 />
                             </div>
                             <h3 className="mt-4">Роман</h3>
@@ -49,7 +47,6 @@ const Team = () => {
                                     alt="coffee business plan illustration"
                                     sizes="100vw"
                                     className="w-full h-auto rounded-custom"
-                                    priority
                                 />
                             </div>
                             <h3 className="mt-4">Аня</h3>

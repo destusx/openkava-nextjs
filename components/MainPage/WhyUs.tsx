@@ -21,7 +21,6 @@ const WhyUs = () => {
                                     alt="coffee business plan illustration"
                                     sizes="100vw"
                                     className="w-full h-auto rounded-custom"
-                                    priority
                                 />
                             </div>
                             <h3 className="mt-2 text-center">Собственная кофейня</h3>
@@ -38,7 +37,6 @@ const WhyUs = () => {
                                     alt="coffee business plan illustration"
                                     sizes="100vw"
                                     className="w-full h-auto rounded-custom"
-                                    priority
                                 />
                             </div>
                             <h3 className="mt-2 text-center">Дорожим репутацией</h3>
@@ -55,7 +53,6 @@ const WhyUs = () => {
                                     alt="coffee business plan illustration"
                                     sizes="100vw"
                                     className="w-full h-auto rounded-custom"
-                                    priority
                                 />
                             </div>
                             <h3 className="mt-2 text-center">
