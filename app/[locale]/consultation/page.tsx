@@ -1,6 +1,7 @@
 import PageWrapper from '@/components/PageWrapper';
 import Image from 'next/image';
 import coffeeShopOwner from '../../../assets/images/consultation/coffee-shop-owner.jpg';
+import coffeeShopOwner1 from '../../../assets/images/consultation/coffee-shop-owner-1.jpg';
 import businessPlan from '../../../assets/images/consultation/business-plan.png';
 import PriceItem from '@/components/Price/PriceItem';
 import ListItem from '@/components/ListItem';
@@ -15,11 +16,20 @@ const Consultation = () => {
         >
             <div className="max-w-2xl m-auto">
                 <p className="text-gray-700">
-                    Вы задумываетесь о запуске своей кофейни, но не знаете, с чего
-                    начать? Как сделать его успешным? Здесь наша команда
-                    бизнес-консультантов вступает в игру, предлагая вам
-                    индивидуальные консультации и поддержку на каждом этапе.
+                    Вы задумываетесь об открытии своей кофейни, но не знаете, с чего
+                    начать? Как сделать ее успешной? Наша команда вступает в игру,
+                    предлагая вам индивидуальные консультации и поддержку на каждом
+                    этапе.
                 </p>
+                <div className="flex flex-col my-3 lg:mt-5">
+                    <Image
+                        src={coffeeShopOwner1}
+                        alt="coffee shop promotion"
+                        sizes="100vw"
+                        className="w-full h-auto rounded-custom"
+                        priority
+                    />
+                </div>
                 <div>
                     <h2 className="text-center">Кому подойдет наша консультация</h2>
                     <div className="text-gray-700 mt-3">
@@ -165,7 +175,7 @@ const Consultation = () => {
                             </ListItem>
                         </ol>
                     </div>
-                    <h2 className="text-center">Тарифы на консультацию</h2>
+                    <h2 className="text-center mt-3">Тарифы на консультацию</h2>
                     <div className="flex flex-wrap lg:justify-evenly xl:gap-x-6 md:gap-y-6 md:-mx-4 h-full my-5">
                         <PricingCard
                             type="Базовый"
@@ -223,6 +233,12 @@ const Consultation = () => {
                             </ListItem>
                             <ListItem listType="ol">
                                 <strong>Получаете консультацию</strong>. Мы - молодая
+                                команда профессионалов, которые горят идеей создания
+                                уникальных и успешных кофейных проектов. Наш опыт
+                                помогут вам воплотить в жизнь современные идеи.
+                            </ListItem>
+                            <ListItem listType="ol">
+                                <strong>Открываете кофейню</strong>. Мы - молодая
                                 команда профессионалов, которые горят идеей создания
                                 уникальных и успешных кофейных проектов. Наш опыт
                                 помогут вам воплотить в жизнь современные идеи.
