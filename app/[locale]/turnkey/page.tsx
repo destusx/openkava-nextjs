@@ -1,7 +1,18 @@
 import PageWrapper from '@/components/PageWrapper';
 import Image from 'next/image';
-import coffeeShopOwner from '../../../assets/images/consultation/coffee-shop-owner.jpg';
-import businessPlan from '../../../assets/images/consultation/business-plan.png';
+import coffeeShopOwner from '../../../assets/images/turnkey/coffee-shop-owner-2.jpg';
+import locationImg from '../../../assets/images/turnkey/location.png';
+import designImg from '../../../assets/images/turnkey/design.png';
+import furnitureImg from '../../../assets/images/turnkey/furniture.png';
+import coffeeBarImg from '../../../assets/images/turnkey/coffee-bar.png';
+import coffeeMachineImg from '../../../assets/images/turnkey/coffee-machine.png';
+import grinderImg from '../../../assets/images/turnkey/coffee-grinder.png';
+import supplierImg from '../../../assets/images/turnkey/supplier.png';
+import baristaImg from '../../../assets/images/turnkey/barista.png';
+import marketingImg from '../../../assets/images/turnkey/digital-marketing.png';
+import renovationImg from '../../../assets/images/turnkey/renovation.png';
+import trainingImg from '../../../assets/images/turnkey/training.png';
+import openningImg from '../../../assets/images/turnkey/opening.png';
 import PriceItem from '@/components/Price/PriceItem';
 import ListItem from '@/components/ListItem';
 import PricingCard from '@/components/Price/PricingCard';
@@ -15,132 +26,302 @@ const Consultation = () => {
         >
             <div className="max-w-2xl m-auto">
                 <p className="text-gray-700">
-                    Вы хотите открыть собственную кофейню, но не уверены, с чего
-                    начать? Как обеспечить ее успешный старт? Наша команда готова
-                    предложить вам полный пакет услуг "Открыть кофейню под ключ" Мы
-                    откроем вам кофейню и обучим всем процессам и нюансам.
+                    Вы хотите открыть собственную кофейню, но вообще не знаете, что
+                    делать? Как обеспечить ее успешный старт? Как контролировать
+                    процесс после открытие?
                 </p>
+                <p className="text-gray-700">
+                    Наша команда готова предложить вам полный пакет услуг "Открыть
+                    кофейню под ключ". Мы откроем вам кофейню, обучим всем процессам
+                    и нюансам. Вам только нужно будет следить за качеством и получать
+                    прибыль.
+                </p>
+                <div className="flex flex-col my-3 lg:mt-5">
+                    <Image
+                        src={coffeeShopOwner}
+                        alt="coffee shop promotion"
+                        sizes="100vw"
+                        className="w-full h-auto rounded-custom"
+                        priority
+                    />
+                </div>
                 <div>
-                    <h2 className="text-center">Кому подойдет наша консультация</h2>
+                    <h2 className="text-center">
+                        Что такое открытие кофейни под ключ?
+                    </h2>
+                    <p className="text-gray-700">
+                        Открытие кофейни под ключ – это концепция предоставления
+                        полного списка услуг и поддержки, необходимых для успешного
+                        запуска и управления кофейным бизнесом. Этот подход
+                        предоставляет предпринимателям открыть кофейню, не затрачивая
+                        значительное время и усилия на организацию всех деталей
+                        самостоятельно.
+                    </p>
+                    <p className="text-gray-700">
+                        <strong>
+                            Мы открываем вам классную кофейню, вы управляете ей и
+                            получаете хороший доход.
+                        </strong>
+                    </p>
+
+                    <h2 className="text-center">
+                        Основные преимущества открытия кофейни под ключ
+                    </h2>
                     <div className="text-gray-700 mt-3">
                         <ul>
                             <ListItem listType="ul">
-                                <strong>Будущий владелец</strong>. У вас появиласть
-                                идея открыть кофейню? Если вы цените вкус кофе и
-                                видите себя в роли хозяина уютного заведения, то это
-                                идеальный шанс реализовать свои амбиции. Управляйте
-                                бизнесом от начала до конца и наслаждайтесь хорошей
-                                прибылью.
+                                <strong>Всему научим</strong>. Наша команда готова
+                                поделиться всеми знаниями и навыками, которые
+                                позволили нам достичь успеха. Вы получите не только
+                                ключи от успешной кофейни, но и знания, чтобы
+                                эффективно управлять ею.
                             </ListItem>
+
                             <ListItem listType="ul">
-                                <strong>Предпрениматель</strong>. Кофейный бизнес
-                                считается одним и самых быстро окупаемых. У вас уже
-                                есть свой бизнес, капитал, но вы ищете новые
-                                возможности для развития? Кофейный бизнес – отличный
-                                вариант для расширения и увеличения прибыли.
+                                <strong>Минимальные риски</strong>. Мы прошли через
+                                все этапы, трудности и учились на своих ошибках когда
+                                открывали свои кофейни. Мы сделали их успешными и
+                                прибыльными. Поэтому риски при открытии будут самые
+                                минимальные. Мы вложим весь этот опыт в вашу кофейню.
                             </ListItem>
+
                             <ListItem listType="ul">
-                                <strong>Инвестор</strong>. Инвестирование в кофейный
-                                бизнес может быть выгодным решением для получение
-                                пасивного дохода. Кофейня, как стабильный и постоянно
-                                развивающейся вид деятельности. Рассмотрите
-                                возможность инвестирования в открытие новой кофейни
-                                или в развитие существующего бизнеса.
+                                <strong>Длительная поддержка</strong>. Мы
+                                предоставляем не только стартовую помощь, но и
+                                обеспечим поддержку вашей кофейни после открытие.
+                                Наша команда окажет помощь в решении любых вопросов и
+                                трудностей, с которыми вы можете столкнуться по пути
+                                к успеху.
                             </ListItem>
+
                             <ListItem listType="ul">
-                                <strong>Опытный бариста</strong>. Если вы являетесь
-                                опытным бариста и мечтаете о собственной кофейне, это
-                                предложение для вас. Ваш опыт и знания в области
-                                кофейного дела могут стать отличным стартовым
-                                капиталом. Откройте свою кофейню, где сможете
-                                воплотить свои идеи.
+                                <strong>Экономия времени</strong>. Время — ценный
+                                ресурс, особенно при открытии собственного бизнеса.
+                                Наша система исключает лишние временные затраты,
+                                предоставляя вам готовые решения и оптимизированные
+                                процессы. Вы сможете сосредоточиться на ключевых
+                                аспектах развития вашей кофейни.
+                            </ListItem>
+
+                            <ListItem listType="ul">
+                                <strong>Налаженные процессы</strong>. Наши методы
+                                основаны на налаженных процессах, которые помогли
+                                сделать наши кофейни успешными. Вы получите доступ к
+                                проверенным стратегиям управления. Это обеспечит
+                                эффективное функционирование вашей кофейни с самого
+                                начала.
                             </ListItem>
                         </ul>
                     </div>
-                    <div className="flex flex-col my-3 lg:mt-5">
-                        <Image
-                            src={coffeeShopOwner}
-                            alt="coffee shop promotion"
-                            sizes="100vw"
-                            className="w-full h-auto rounded-custom"
-                            priority
-                        />
-                    </div>
-                    <h2 className="text-center">
-                        Что включает консультация по открытию кофейни?
-                    </h2>
-                    <div className="text-gray-700 mt-3">
-                        <ol>
-                            <ListItem listType="ol">
-                                <strong>Ваша идея</strong>. Первый шаг, мы выслушаем
-                                вас, вашу идею, пожелание, знание. После
-                                проанализируем все информацию и подберем
-                                индивидуальный подход.
-                            </ListItem>
-                            <ListItem listType="ol">
-                                <strong>Бизнес план</strong>. На этом этапе мы
-                                приступаем к разработке бизнес-плана, который
-                                включает первоначальные расходы и доходы. Наша цель —
-                                обеспечить вас надежной информацией для успешного
-                                старта вашего кофейного бизнеса.
-                            </ListItem>
-                            <ListItem listType="ol">
-                                <strong>Выбор локации</strong>. Эффективность вашего
-                                бизнеса зависит от правильного выбора места. Наши
-                                консультанты помогут вам анализировать потенциальные
-                                локации, оценивать трафик и выбирать оптимальное
-                                местоположение для вашей кофейни.
-                            </ListItem>
-                            <ListItem listType="ol">
-                                <strong>Маркетинг</strong>. Разработка маркетинговой
-                                стратегии для вашей кофейни — важный шаг. Мы
-                                предоставим вам инструменты и рекомендации для
-                                привлечения клиентов, создания бренда и поддержания
-                                высокого уровня узнаваемости.
-                            </ListItem>
-                            <ListItem listType="ol">
-                                <strong>Поставщики</strong>. Выбор надежных
-                                поставщиков сырья и оборудования является залогом
-                                успешной работы кофейни. Мы подскажем, как выбрать
-                                качественных поставщиков и договориться о выгодных
-                                условиях сотрудничества.
-                            </ListItem>
-                            <ListItem listType="ol">
-                                <strong>Регистрация бизнеса</strong>. Оформление всех
-                                необходимых документов для регистрации вашего
-                                кофейного бизнеса. Мы предоставим вам подробные
-                                инструкции и поддержим вас на каждом этапе этого
-                                важного процесса.
-                            </ListItem>
-                            <ListItem listType="ol">
-                                <strong>Оборудование</strong>. Советы по выбору и
-                                покупке необходимого оборудования для кофейни. Мы
-                                поможем определиться с техническими характеристиками,
-                                бюджетом и поставщиками оборудования.
-                            </ListItem>
-                            <ListItem listType="ol">
-                                <strong>Как выбрать персонал</strong>. Рекомендации
-                                по подбору и обучению персонала. Мы поможем вам
-                                создать эффективную команду, способную обеспечивать
-                                высокий уровень обслуживания.
-                            </ListItem>
-                            <ListItem listType="ol">
-                                <strong>Составление меню</strong>. Разработка
-                                разнообразного и привлекательного меню. Мы предложим
-                                стратегии формирования ассортимента, учтем пожелания
-                                целевой аудитории и конкурентные преимущества.
-                            </ListItem>
-                        </ol>
-                        <div className="flex flex-col my-3 lg:mt-5">
-                            <Image
-                                src={businessPlan}
-                                alt="coffee shop promotion"
-                                sizes="100vw"
-                                className="w-full h-auto rounded-custom"
-                                priority
-                            />
+                    <h2 className="text-center">Этапы открытия кофейни под ключ</h2>
+
+                    <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-x-7 text-gray-700 my-3">
+                        <div>
+                            <div className="flex flex-col my-3 w-[50%] m-auto">
+                                <Image
+                                    src={locationImg}
+                                    alt="coffee shop promotion"
+                                    sizes="100vw"
+                                    className="w-full h-auto rounded-custom"
+                                    priority
+                                />
+                            </div>
+                            <h3 className="text-black">1. Поиск локации</h3>
+                            <p>
+                                Первый шаг, мы выслушаем вас, вашу идею, пожелание,
+                                знание. После проанализируем все информацию и
+                                подберем индивидуальный подход.
+                            </p>
+                        </div>
+                        <div>
+                            <div className="flex flex-col my-3 w-[50%] m-auto">
+                                <Image
+                                    src={designImg}
+                                    alt="coffee shop promotion"
+                                    sizes="100vw"
+                                    className="w-full h-auto rounded-custom"
+                                    priority
+                                />
+                            </div>
+                            <h3 className="text-black">2. Разработка дизайна</h3>
+                            <p>
+                                Первый шаг, мы выслушаем вас, вашу идею, пожелание,
+                                знание. После проанализируем все информацию и
+                                подберем индивидуальный подход.
+                            </p>
+                        </div>
+                        <div>
+                            <div className="flex flex-col my-3 w-[50%] m-auto">
+                                <Image
+                                    src={renovationImg}
+                                    alt="coffee shop promotion"
+                                    sizes="100vw"
+                                    className="w-full h-auto rounded-custom"
+                                    priority
+                                />
+                            </div>
+                            <h3 className="text-black">3. Ремонт помещение</h3>
+                            <p>
+                                Первый шаг, мы выслушаем вас, вашу идею, пожелание,
+                                знание. После проанализируем все информацию и
+                                подберем индивидуальный подход.
+                            </p>
+                        </div>
+                        <div>
+                            <div className="flex flex-col my-3 w-[50%] m-auto">
+                                <Image
+                                    src={furnitureImg}
+                                    alt="coffee shop promotion"
+                                    sizes="100vw"
+                                    className="w-full h-auto rounded-custom"
+                                    priority
+                                />
+                            </div>
+                            <h3 className="text-black">4. Подбор мебели</h3>
+                            <p>
+                                Первый шаг, мы выслушаем вас, вашу идею, пожелание,
+                                знание. После проанализируем все информацию и
+                                подберем индивидуальный подход.
+                            </p>
+                        </div>
+                        <div>
+                            <div className="flex flex-col my-3 w-[50%] m-auto">
+                                <Image
+                                    src={coffeeBarImg}
+                                    alt="coffee shop promotion"
+                                    sizes="100vw"
+                                    className="w-full h-auto rounded-custom"
+                                    priority
+                                />
+                            </div>
+                            <h3 className="text-black">5. Установка бара</h3>
+                            <p>
+                                Первый шаг, мы выслушаем вас, вашу идею, пожелание,
+                                знание. После проанализируем все информацию и
+                                подберем индивидуальный подход.
+                            </p>
+                        </div>
+                        <div>
+                            <div className="flex flex-col my-3 w-[50%] m-auto">
+                                <Image
+                                    src={grinderImg}
+                                    alt="coffee shop promotion"
+                                    sizes="100vw"
+                                    className="w-full h-auto rounded-custom"
+                                    priority
+                                />
+                            </div>
+                            <h3 className="text-black">6. Покупка оборудование</h3>
+                            <p>
+                                Первый шаг, мы выслушаем вас, вашу идею, пожелание,
+                                знание. После проанализируем все информацию и
+                                подберем индивидуальный подход.
+                            </p>
+                        </div>
+                        <div>
+                            <div className="flex flex-col my-3 w-[50%] m-auto">
+                                <Image
+                                    src={coffeeMachineImg}
+                                    alt="coffee shop promotion"
+                                    sizes="100vw"
+                                    className="w-full h-auto rounded-custom"
+                                    priority
+                                />
+                            </div>
+                            <h3 className="text-black">7. Аренда кофемашины</h3>
+                            <p>
+                                Первый шаг, мы выслушаем вас, вашу идею, пожелание,
+                                знание. После проанализируем все информацию и
+                                подберем индивидуальный подход.
+                            </p>
+                        </div>
+                        <div>
+                            <div className="flex flex-col my-3 w-[50%] m-auto">
+                                <Image
+                                    src={supplierImg}
+                                    alt="coffee shop promotion"
+                                    sizes="100vw"
+                                    className="w-full h-auto rounded-custom"
+                                    priority
+                                />
+                            </div>
+                            <h3 className="text-black">8. Работа с поставщиками</h3>
+                            <p>
+                                Первый шаг, мы выслушаем вас, вашу идею, пожелание,
+                                знание. После проанализируем все информацию и
+                                подберем индивидуальный подход.
+                            </p>
+                        </div>
+                        <div>
+                            <div className="flex flex-col my-3 w-[50%] m-auto">
+                                <Image
+                                    src={baristaImg}
+                                    alt="coffee shop promotion"
+                                    sizes="100vw"
+                                    className="w-full h-auto rounded-custom"
+                                    priority
+                                />
+                            </div>
+                            <h3 className="text-black">9. Поиск персонала</h3>
+                            <p>
+                                Первый шаг, мы выслушаем вас, вашу идею, пожелание,
+                                знание. После проанализируем все информацию и
+                                подберем индивидуальный подход.
+                            </p>
+                        </div>
+                        <div>
+                            <div className="flex flex-col my-3 w-[50%] m-auto">
+                                <Image
+                                    src={marketingImg}
+                                    alt="coffee shop promotion"
+                                    sizes="100vw"
+                                    className="w-full h-auto rounded-custom"
+                                    priority
+                                />
+                            </div>
+                            <h3 className="text-black">10. Настройка маркетинга</h3>
+                            <p>
+                                Первый шаг, мы выслушаем вас, вашу идею, пожелание,
+                                знание. После проанализируем все информацию и
+                                подберем индивидуальный подход.
+                            </p>
+                        </div>
+                        <div>
+                            <div className="flex flex-col my-3 w-[50%] m-auto">
+                                <Image
+                                    src={trainingImg}
+                                    alt="coffee shop promotion"
+                                    sizes="100vw"
+                                    className="w-full h-auto rounded-custom"
+                                    priority
+                                />
+                            </div>
+                            <h3 className="text-black">11. Обучаем вас</h3>
+                            <p>
+                                Первый шаг, мы выслушаем вас, вашу идею, пожелание,
+                                знание. После проанализируем все информацию и
+                                подберем индивидуальный подход.
+                            </p>
+                        </div>
+                        <div>
+                            <div className="flex flex-col my-3 w-[50%] m-auto">
+                                <Image
+                                    src={openningImg}
+                                    alt="coffee shop promotion"
+                                    sizes="100vw"
+                                    className="w-full h-auto rounded-custom"
+                                    priority
+                                />
+                            </div>
+                            <h3 className="text-black">12. Открытие кофейни</h3>
+                            <p>
+                                Первый шаг, мы выслушаем вас, вашу идею, пожелание,
+                                знание. После проанализируем все информацию и
+                                подберем индивидуальный подход.
+                            </p>
                         </div>
                     </div>
+
                     <h2 className="text-center">Преимущества нашей консультации</h2>
                     <div className="text-gray-700 mt-3">
                         <ol>
