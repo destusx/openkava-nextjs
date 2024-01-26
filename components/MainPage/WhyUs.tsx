@@ -15,7 +15,7 @@ const WhyUs = () => {
                     </h2>
                     <div className="flex flex-col md:flex-row justify-center md:justify-between mt-10 gap-x-12 gap-y-4">
                         <div className="flex-1 flex flex-col items-center">
-                            <div className="w-[80%] md:w-full flex flex-col mt-5 lg:mt-0 transition-all duration-300 ease-linear hover:scale-[102%]">
+                            <div className="w-[80%] flex flex-col mt-5 lg:mt-0 transition-all duration-300 ease-linear hover:scale-[102%]">
                                 <Image
                                     src={coffeeShopImg}
                                     alt="coffee business plan illustration"
@@ -31,7 +31,7 @@ const WhyUs = () => {
                             </div>
                         </div>
                         <div className="flex-1 flex flex-col items-center">
-                            <div className="w-[80%] md:w-full flex flex-col mt-5 lg:mt-0 transition-all duration-300 ease-linear hover:scale-[102%]">
+                            <div className="w-[80%] flex flex-col mt-5 lg:mt-0 transition-all duration-300 ease-linear hover:scale-[102%]">
                                 <Image
                                     src={reputationImg}
                                     alt="coffee business plan illustration"
@@ -47,7 +47,7 @@ const WhyUs = () => {
                             </div>
                         </div>
                         <div className="flex-1 flex flex-col items-center">
-                            <div className="w-[80%] md:w-full flex flex-col mt-5 lg:mt-0 transition-all duration-300 ease-linear hover:scale-[102%]">
+                            <div className="w-[80%] flex flex-col mt-5 lg:mt-0 transition-all duration-300 ease-linear hover:scale-[102%]">
                                 <Image
                                     src={supportImg}
                                     alt="coffee business plan illustration"
