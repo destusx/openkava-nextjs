@@ -7,7 +7,11 @@ export default async function RenderMainImage(imgName: string) {
     const image = await getImage(imgName);
     const locale: string = useLocale().toUpperCase();
 
+    console.log(image);
+
     const imageUrl = getImagePath(image?.filename);
+
+    console.log(imageUrl);
 
     return (
         <div className="relative w-full h-[350px] mt-3">
