@@ -10,7 +10,7 @@ const About = () => {
                     <h2 className="text-center md:text-left">
                         Молодная опытная команда
                     </h2>
-                    <div className="text-gray-600 mt-3">
+                    <div className="text-gray-700 mt-3">
                         <p>
                             Наш путь начался в августе 2021 года. Пару молодых ребят
                             без опыта в кофейном бизнесе задумались от открытии
@@ -49,7 +49,7 @@ const About = () => {
                     <h2 className="text-center md:text-left">
                         Молодная опытная команда
                     </h2>
-                    <div className="text-gray-600 mt-3">
+                    <div className="text-gray-700 mt-3">
                         <p>
                             Наш путь начался в августе 2021 года. Пару молодых ребят
                             без опыта в кофейном бизнесе задумались от открытии
@@ -75,7 +75,7 @@ const About = () => {
                     <h2 className="text-center md:text-left">
                         Молодная опытная команда
                     </h2>
-                    <div className="text-gray-600 mt-3">
+                    <div className="text-gray-700 mt-3">
                         <p>
                             Наш путь начался в августе 2021 года. Пару молодых ребят
                             без опыта в кофейном бизнесе задумались от открытии

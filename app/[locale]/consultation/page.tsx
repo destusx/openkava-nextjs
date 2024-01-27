@@ -95,7 +95,7 @@ const Consultation = () => {
                     <p className="leading-loose">
                         Важно заметить что это профессиональная консультация,{' '}
                         <Link
-                            className="text-base-color"
+                            className="text-base-color hover:text-indigo-600"
                             target="_blank"
                             href={'/turnkey'}
                         >

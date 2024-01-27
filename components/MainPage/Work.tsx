@@ -15,8 +15,8 @@ const Work = () => {
                 <div className="grid grid-cols-1 md:grid-cols-[45%_55%] lg:grid-cols-[35%_65%] md:gap-x-9">
                     <div className="text-center md:text-left">
                         <h2 className="text-black">{t('title')}</h2>
-                        <p className="mt-3 text-gray-600">{t('firstParagraph')}</p>
-                        <p className="mt-3 text-gray-600">{t('secondParagraph')}</p>
+                        <p className="mt-3 text-gray-700">{t('firstParagraph')}</p>
+                        <p className="mt-3 text-gray-700">{t('secondParagraph')}</p>
                         <div className="flex flex-col mt-5 lg:mt-0">
                             <Image
                                 src={coffeeShopImg}
@@ -30,22 +30,22 @@ const Work = () => {
                         <div>
                             <Image src={firstPoint} alt="" />
                             <h3 className="mt-3">{t('firstSubtitle')}</h3>
-                            <p className="mt-3 text-gray-600">{t('firstText')}</p>
+                            <p className="mt-3 text-gray-700">{t('firstText')}</p>
                         </div>
                         <div>
                             <Image src={secondPoint} alt="" />
                             <h3 className="mt-3">{t('secondSubtitle')}</h3>
-                            <p className="mt-3 text-gray-600">{t('secondText')}</p>
+                            <p className="mt-3 text-gray-700">{t('secondText')}</p>
                         </div>
                         <div>
                             <Image src={thirdPoint} alt="" />
                             <h3 className="mt-3">{t('thirdSubtitle')}</h3>
-                            <p className="mt-3 text-gray-600">{t('thirdText')}</p>
+                            <p className="mt-3 text-gray-700">{t('thirdText')}</p>
                         </div>
                         <div>
                             <Image src={fourthPoint} alt="" />
                             <h3 className="mt-3">{t('fourthSubtitle')}</h3>
-                            <p className="mt-3 text-gray-600">{t('fourthText')}</p>
+                            <p className="mt-3 text-gray-700">{t('fourthText')}</p>
                         </div>
                     </div>
                 </div>

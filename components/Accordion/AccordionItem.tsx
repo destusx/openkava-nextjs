@@ -1,8 +1,16 @@
 'use client';
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const AccordionItem = ({ header, text }: { header: string; text: string }) => {
+const AccordionItem = ({
+    header,
+    text,
+    children,
+}: {
+    header: string;
+    text: string;
+    children?: ReactNode;
+}) => {
     const [active, setActive] = useState(false);
 
     const handleToggle = () => {
@@ -38,7 +46,7 @@ const AccordionItem = ({ header, text }: { header: string; text: string }) => {
                 </div>
             </button>
 
-            <div className={`pl-6 ${active ? 'block' : 'hidden'}`}>
+            <div className={`pl-6 pr-2 ${active ? 'block' : 'hidden'}`}>
                 <AnimatePresence>
                     {active && (
                         <motion.p
@@ -49,6 +57,7 @@ const AccordionItem = ({ header, text }: { header: string; text: string }) => {
                             className="py-3 font-semibold text-base leading-relaxed text-body-color"
                         >
                             {text}
+                            {children}
                         </motion.p>
                     )}
                 </AnimatePresence>
