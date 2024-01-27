@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@/navigation';
 import { useRef, useState } from 'react';
 import { useLocale } from 'next-intl';
 import Tiptap from '@/components/Blog/AddPost/TipTap';
@@ -27,6 +27,8 @@ function AddPost() {
     const [categories, setCategories] = useState<string[]>([]);
     const inputFileRef = useRef<HTMLInputElement>(null);
 
+    console.log('image', image);
+
     const { data: categoriesData } = useCategories(locale);
     const { mutate: createPostMutation, isSuccess } = useCreatePost();
 
@@ -45,9 +47,11 @@ function AddPost() {
             return alert('Выберите категорию');
         }
 
-        if (!image?.filename) {
+        if (!image?.id) {
             return alert('Загрузите картинку');
         }
+
+        console.log(image.id);
 
         const post = {
             title,
@@ -56,10 +60,12 @@ function AddPost() {
             seoDescription,
             slug: slug(slugStr),
             content,
-            image: image?.filename,
+            image: image.id,
             categories: categories.map(Number),
             language: locale as Language,
         };
+
+        console.log(post);
 
         createPostMutation(post);
         router.refresh();

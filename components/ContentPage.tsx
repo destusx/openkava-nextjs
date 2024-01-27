@@ -60,7 +60,7 @@ const ContentPage = async ({ slug, type }: Props) => {
 
     const breadcrumbs = renderBreadcrumbs(data);
     const dateInfo = renderDateInfo(data);
-    const image = RenderMainImage(data.image.filename);
+    const image = RenderMainImage(data.image?.filename);
     const parsedConnent = ContentParser(data);
 
     return (

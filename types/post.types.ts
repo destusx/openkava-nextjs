@@ -26,7 +26,7 @@ type ICreatePostBase = Pick<
 >;
 
 export interface ICreatePost extends ICreatePostBase {
-    image: string;
+    image: number;
     categories: number[];
 }
 

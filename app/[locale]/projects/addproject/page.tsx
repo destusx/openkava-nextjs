@@ -61,10 +61,14 @@ function AddProject() {
             return alert('Текст от 500 до 5000 символов');
         }
 
+        if (!image?.id) {
+            return alert('Загрузите картинку');
+        }
+
         const project = {
             title,
             content,
-            image: image?.filename,
+            image: image.id,
             language: locale,
             budget,
             address,
