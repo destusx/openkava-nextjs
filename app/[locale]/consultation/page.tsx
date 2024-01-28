@@ -2,7 +2,7 @@ import PageWrapper from '@/components/PageWrapper';
 import Image from 'next/image';
 import coffeeShopOwner from '../../../assets/images/consultation/coffee-shop-owner.jpg';
 import coffeeShopOwner1 from '../../../assets/images/consultation/coffee-shop-owner-1.jpg';
-import businessPlan from '../../../assets/images/consultation/business-plan.png';
+import businessPlan from '../../../assets/images/consultation/business-plan.jpg';
 import PriceItem from '@/components/Price/PriceItem';
 import ListItem from '@/components/ListItem';
 import PricingCard from '@/components/Price/PricingCard';
