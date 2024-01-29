@@ -24,6 +24,7 @@ const Accordion = () => {
                             text="Вы получаете ценный опыт и информацию, следуя которой вы увеличиваете шансы на успех бизнеса. Подробнее на странице "
                         >
                             <Link
+                                target="_blank"
                                 href="/consultation"
                                 className="text-base-color hover:text-indigo-600"
                             >
@@ -50,6 +51,7 @@ const Accordion = () => {
                         >
                             <Link
                                 href="/barista-courses"
+                                target="_blank"
                                 className="text-base-color hover:text-indigo-600"
                             >
                                 курсы бариста
@@ -63,6 +65,7 @@ const Accordion = () => {
                         >
                             <Link
                                 href="/turnkey"
+                                target="_blank"
                                 className="text-base-color hover:text-indigo-600"
                             >
                                 открытиe кофейни под ключ
