@@ -39,11 +39,11 @@ const BlogPreview = async () => {
                         />
                     </div>
                 </Link>
-                <div className="text-gray-500 mt-5">{postData}</div>
+                <div className="text-gray-500 mt-3">{postData}</div>
                 <Link href={`/blog/${post.categories[0].slug}/${post.slug}`}>
-                    <h3 className="mt-3">{post.title}</h3>
+                    <h3 className="mt-2">{post.title}</h3>
                 </Link>
-                <p className="mt-3 text-gray-600">{post.description}</p>
+                <p className="mt-2 text-gray-600">{post.description}</p>
             </div>
         );
     });
