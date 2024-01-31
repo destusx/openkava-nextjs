@@ -47,7 +47,7 @@ const Accordion = () => {
 
                         <AccordionItem
                             header="Какие есть услуги кроме консалтинга и открытие под ключ?"
-                            text="Мы также предоставляем "
+                            text="Мы также предоставляем профессиональные "
                         >
                             <Link
                                 href="/barista-courses"
