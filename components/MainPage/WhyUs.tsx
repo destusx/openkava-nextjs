@@ -23,9 +23,9 @@ const WhyUs = () => {
                                     className="w-full h-auto rounded-custom"
                                 />
                             </div>
-                            <h3 className="mt-2 text-center">Собственные кофейни</h3>
+                            <h3 className="mt-2 text-center">Собственная кофейня</h3>
                             <div className="mt-2 text-sm">
-                                Мы владеем собственными кофейни, которые открывали с
+                                Мы владеем собственной кофейней, которую открывали с
                                 полного нуля. Знаем все процессы и нюансы этого
                                 бизнеса.
                             </div>
